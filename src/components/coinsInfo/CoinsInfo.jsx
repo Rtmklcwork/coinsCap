@@ -6,6 +6,7 @@ import { removeUser } from '../../slices/userSlice'
 import CoinsTable from '../../coinsTable/CoinsTable'
 import { useGetCoinsQuery } from '../coins/Coins'
 import { coinsData } from '../../slices/coinsSlice'
+import Header from '../header/Header'
 
 
 const MainPage = () => {
@@ -22,6 +23,7 @@ const MainPage = () => {
   }, [data])
   return (
     <>
+      <Header/>
       <CoinsTable />
       <LogoutBtn handleLogout={handleLogout} />
     </>

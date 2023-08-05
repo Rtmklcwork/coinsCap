@@ -6,37 +6,20 @@ import { useSelector } from 'react-redux';
 
 const columns = [
   {
-    title: 'Rank',
-    dataIndex: 'rank',
-   },
-  {    
-    title: 'Name',
-    dataIndex: 'name',
-    render: name=>{
-      return <a>{name}</a>
-    },
-  },
-  {
-    title: 'Symbol',
     dataIndex: 'symbol',
   },
   {
-    title: 'Supply',
     dataIndex: 'supply',
-    sorter: (a,b) => a.supply - b.supply
-    
-  },
-  {
-    title: 'Buy Coin',
-    dataIndex: 'BuyCoin',
-    render: () => <button>+</button>
-    
   },
 ];
 
 
-const CoinsTable = () => {
-const coins = useSelector(state=>state.coins.coins.data)
+const ThreeMainCoins = () => {
+  const coins = useSelector(state => state.coins.coins.data)
+  // const coins3 = coins.filter((i, index) => i[index] < 3)
+  // console.log(2,coins3);
+  console.log(1,coins);
+
 
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -82,7 +65,16 @@ const coins = useSelector(state=>state.coins.coins.data)
       },
     ],
   };
-  
-  return <Table rowSelection={rowSelection} columns={columns} dataSource={coins} />;
+
+
+  return <Table
+    // rowSelection={rowSelection}
+    
+    columns={columns}
+    dataSource={coins}
+    size='small'
+    bordered
+    title={() => 'Популярные монеты:'}
+  />;
 };
-  export default CoinsTable;
+export default ThreeMainCoins;
