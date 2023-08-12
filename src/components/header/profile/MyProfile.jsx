@@ -1,14 +1,9 @@
 import React from 'react'
-import s from './MyProfile.module.css'
-import {WalletOutlined } from '@ant-design/icons';
 
 const MyProfile = () => {
   return (
-    <div className={s.wrapper}>
-      <button>
-      <WalletOutlined />
-      </button>
-    
+    <div>
+    <h1>Здесь будет храниься информация с моими монетами</h1>
     </div>
   )
 }
