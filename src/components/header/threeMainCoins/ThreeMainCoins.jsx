@@ -8,7 +8,8 @@ const ThreeMainCoins = () => {
   let coins = useSelector(state => state.coins.coins.data)
   return (
     <div>
-      {coins && coins.filter((_,index)=>index <3).map(item=> <p>{item.id}: {item.supply}</p>)}
+      Популярные криптовалюты:
+      {coins && coins.filter((_,index)=>index <3).map(item=> <p>{item.id}: {item.supply}$</p>)}
     </div>
   )
 }

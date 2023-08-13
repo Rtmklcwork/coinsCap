@@ -12,7 +12,7 @@ const ProfileBtn = () => {
   return (
    <button className={s.wrapper}
    onClick={handleClick} >
-    <WalletOutlined />
+   Личный кабинет <WalletOutlined />
    </button>
   )
 }
