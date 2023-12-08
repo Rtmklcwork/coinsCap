@@ -9,7 +9,7 @@ const ThreeMainCoins = () => {
   return (
     <div>
       Популярные криптовалюты:
-      {coins && coins.filter((_,index)=>index <3).map(item=> <p>{item.id}: {item.supply}$</p>)}
+      {coins && coins.filter((_,index)=>index <3).map(item=> <p>{item.id}: {item.priceUsd}$</p>)}
     </div>
   )
 }
