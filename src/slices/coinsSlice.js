@@ -4,7 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   coins: [],
   selected: {},
-  wallet: [],
 }
 
 const coinsSlice = createSlice({
@@ -17,12 +16,8 @@ const coinsSlice = createSlice({
     getSelectedCoin(state, action) {
       state.selected = { ...action.payload }
     },
-    getCoinInWallet(state, action) {
-      state.wallet.push(action.payload)
-    }
   },
-
 })
 
-export const { coinsData, getSelectedCoin, getCoinInWallet } = coinsSlice.actions;
+export const { coinsData, getSelectedCoin } = coinsSlice.actions;
 export default coinsSlice.reducer;

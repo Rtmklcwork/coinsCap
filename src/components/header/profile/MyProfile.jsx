@@ -2,19 +2,21 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const MyProfile = () => {
-  const store = useSelector(state => state.coins.wallet)
+  const store = useSelector(state => state.wallet)
+  const selected = useSelector(state => state.coins.selected)
+  console.log('selected', selected);
   console.log('store', store);
 
   return (
     <div>
-      <h1>Номинал моих монет в долларах АСАШАЙ :</h1>
-      {store ? store.flat().map(i =>
-        <h1>{i.id} {i.priceUsd}</h1>
+      <h3>Мои монеты:</h3>
+      {store ? store.items.map(i =>
+        <h4>{i.id} {i.priceUsd * i.count} USD</h4>
       )
         :
         '!!!'}
-      <h1>Общая сумма моих денюжков : </h1>
-      {/* {store ?? store.flat().reduce((acc, i) => <h1>{acc + i.priceUsd}</h1>)} */}
+      <h3>Общая сумма моих денюжков : </h3>
+      <h4>{store.totalPrice} USD</h4>
     </div>
   )
 }

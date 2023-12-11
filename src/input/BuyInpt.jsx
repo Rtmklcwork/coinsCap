@@ -13,7 +13,9 @@ const BuyInpt = ({ onChange }) => {
             style={{ height: "200" }}
             type='number'
             allowClear='true'
-            placeholder="Введите количество" />
+            placeholder="Введите количество"
+            defaultValue={'0'}
+        />
     )
 }
 

@@ -6,12 +6,7 @@ import { getSelectedCoin } from '../../slices/coinsSlice';
 import ModalWindow from '../../modalWindow/ModalWindow';
 
 
-// const rowSelection = {
-//   onChange: (selectedRowKeys, selectedRows) => {
-//     selectedRowKeys
-//   }
-// }
-// console.log(rowSelection);
+
 const CoinsTable = () => {
 
   const [modalActive, setModalActive] = useState(false)
@@ -70,7 +65,6 @@ const CoinsTable = () => {
       dataIndex: 'BuyCoin',
       render: () => <button onClick={() => {
         setModalActive(true)
-        console.log();
       }}>
         +
       </button>
@@ -80,7 +74,17 @@ const CoinsTable = () => {
 
   return (
     <>
-      <Table rowKey={coins.data.id} columns={columns} dataSource={coins} />;
+      <Table columns={columns} dataSource={coins}
+        onRow={(record, rowIndex) => {
+          return {
+            onClick: (event) => { dispatch(getSelectedCoin(record)) }, // click row
+            onDoubleClick: (event) => { }, // double click row
+            onContextMenu: (event) => { }, // right button click row
+            onMouseEnter: (event) => { }, // mouse enter row
+            onMouseLeave: (event) => { }, // mouse leave row
+          };
+        }}
+      />;
       <ModalWindow active={modalActive} setActive={setModalActive} />
 
     </>

@@ -5,6 +5,7 @@ import BuyBtn from '../../buttons/BuyBtn';
 import SelectedCoinsTable from './SelectedCoinsTable'
 import { useDispatch } from 'react-redux';
 import { getCoinInWallet } from '../../slices/coinsSlice';
+import { addCoin } from '../../slices/walletSlice';
 
 const SelectedCoin = () => {
   const selected = useSelector(state => state.coins.selected)
@@ -18,9 +19,7 @@ const SelectedCoin = () => {
   }
 
   const handleClick = () => {
-
-
-    dispatch(getCoinInWallet(selected))
+    dispatch(addCoin(selected))
   }
 
 
