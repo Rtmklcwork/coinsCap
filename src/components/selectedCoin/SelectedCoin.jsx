@@ -19,7 +19,10 @@ const SelectedCoin = () => {
   }
 
   const handleClick = () => {
-    dispatch(addCoin(selected))
+    dispatch(addCoin({
+      ...selected,
+      count: value
+    }))
   }
 
 
