@@ -7,12 +7,13 @@ const BuyBtn = ({ handleClick }) => {
             direction="vertical"
             style={{
                 textAlign: 'center',
-                width: '20%',
+                // width: '20%',
             }}
         >
-            <Button onClick={handleClick}
+            <Button
+                onClick={handleClick}
                 type="primary" block>
-                Купить валюту
+                Buy
             </Button>
         </Space>
     )

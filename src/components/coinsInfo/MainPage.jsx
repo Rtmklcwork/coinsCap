@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { removeUser } from '../../slices/userSlice'
 import CoinsTable from '../coinsTable/CoinsTable'
+import Header from '../header/Header'
 import { useGetCoinsQuery } from '../coins/Coins'
 import { coinsData } from '../../slices/coinsSlice'
 import ModalWindow from '../../modalWindow/ModalWindow'
@@ -23,6 +24,7 @@ const MainPage = () => {
   }, [data])
   return (
     <>
+      <Header />
       <CoinsTable />
       <LogoutBtn handleLogout={handleLogout} />
     </>

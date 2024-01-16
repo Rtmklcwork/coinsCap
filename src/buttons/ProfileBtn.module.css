@@ -1,5 +1,9 @@
-.wrapper{
-    position: absolute;
-    top:0;
-    right: 0;
-  }
+.wrapper {
+  font-size: 16px;
+  /* margin: 20px; */
+  background-color: #fff;
+  width: 100px;
+  height: 88px;
+  color: #f970c5;
+  border: none;
+}

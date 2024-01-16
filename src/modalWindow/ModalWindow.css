@@ -14,20 +14,32 @@
 }
 
 .modal.active {
-  opacity: 1;
-  pointer-events: all;
-  }
+    opacity: 1;
+    pointer-events: all;
+}
 
 .modal_content {
     padding: 20px;
     border-radius: 12px;
     background-color: white;
-    width: 50vw;
+    width: 400px;
     height: 30vh;
     transform: scale(0.5);
     transition: 0.4s all;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.modal_content.active{
+
+.modal_content.active {
     transform: scale(1);
+}
+
+.content {
+    color: #f970c5;
+    font-size: 30px;
+    margin: 10px;
+    width: 80%;
+    text-align: center;
 }

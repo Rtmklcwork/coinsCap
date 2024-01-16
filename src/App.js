@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/login/Login';
 import MyProfile from './components/header/profile/MyProfile';
@@ -11,7 +12,7 @@ import MainPage from './components/coinsInfo/MainPage';
 const App = () => {
   return (
     <>
-      <Header />
+
       <Routes>
         <Route path='*' element={<Login />} />
         <Route path='/main' element={<MainPage />} />

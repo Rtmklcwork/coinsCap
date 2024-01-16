@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+
+    height: 50px;
+    position: relative;
+    /* left: 770px; */
+    margin: auto;
+    color: #f970c5;
+    width: 200px;
+    font-size: small;
+}

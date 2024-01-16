@@ -15,6 +15,7 @@ const BuyInpt = ({ onChange }) => {
             allowClear='true'
             placeholder="Введите количество"
             defaultValue={'0'}
+            min={0}
         />
     )
 }

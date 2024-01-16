@@ -28,13 +28,15 @@ const ModalWindow = ({ active, setActive, children }) => {
         <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
             <div className={active ? 'modal_content active' : 'modal_content'} onClick={(e) => e.stopPropagation()}>
                 {children}
-                <div>
+                <div className='content'>
                     {store.symbol}
                     -
                     {store.name}
                 </div>
-                <div>
+                <div className='content'>
                     <BuyInpt onChange={handleChange} />
+                </div>
+                <div className='content'>
                     <BuyBtn handleClick={handleClick} />
                 </div>
             </div>

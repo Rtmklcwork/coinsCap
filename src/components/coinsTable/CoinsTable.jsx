@@ -21,53 +21,61 @@ const CoinsTable = () => {
       dataIndex: 'rank',
     },
     {
+      key: '2',
       dataIndex: 'symbol',
+      title: 'ID'
     },
 
     {
-      key: '2',
+      key: '3',
       title: 'Name',
       dataIndex: 'name',
       render: name => {
         return <a onClick={() => {
           const selectedCoin = coins.find((i) => i.name === name)
-          console.log(selectedCoin, 111);
           navigate('/selected')
           dispatch(getSelectedCoin(selectedCoin))
         }}>{name}</a>
       },
     },
     {
-      key: '3',
+      key: '4',
       title: 'vwap24Hr',
       dataIndex: 'vwap24Hr',
     },
     {
-      key: '4',
+      key: '5',
       title: 'Change(24Hr)',
       dataIndex: 'changePercent24Hr',
     },
     {
-      key: '5',
+      key: '6',
       title: 'Market Cup',
       dataIndex: 'marketCapUsd',
     },
     {
-      key: '6',
+      key: '7',
       title: 'Price',
       dataIndex: 'priceUsd',
       sorter: (a, b) => a.supply - b.supply
 
     },
     {
-      key: '7',
+      key: '8',
       title: 'Buy Coin',
       dataIndex: 'BuyCoin',
-      render: () => <button onClick={() => {
-        setModalActive(true)
-      }}>
-        +
-      </button>
+      render: () =>
+        <button
+          style={{
+            backgroundColor: 'white',
+            border: '0.5px solid #1677ff',
+            color: '#1677ff'
+          }}
+          onClick={() => {
+            setModalActive(true)
+          }}>
+          +
+        </button>
 
     },
   ];
