@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/coinsCap/static/css/main.6f410070.css",
+    "main.js": "/coinsCap/static/js/main.b2107af4.js",
+    "index.html": "/coinsCap/index.html",
+    "main.6f410070.css.map": "/coinsCap/static/css/main.6f410070.css.map",
+    "main.b2107af4.js.map": "/coinsCap/static/js/main.b2107af4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f410070.css",
+    "static/js/main.b2107af4.js"
+  ]
+}
