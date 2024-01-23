@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 const MyProfile = () => {
   const store = useSelector(state => state.wallet)
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const navigate = useNavigate()
   const handleLogout = () => {
     navigate('/login')
@@ -26,21 +26,25 @@ const MyProfile = () => {
       <div className={style.wrapper}>
         <button className={style.visible} onClick={() => setVisible(!visible)}><EyeOutlined /></button>
         <h2>My Coins:</h2>
-        {visible == true ? store.items.map(i =>
-          <h3>{i.id} {((i.priceUsd) * i.count).toFixed(2)} USD </h3>
-        )
-          :
-          store.items.map(item =>
-            <h3>{item.id} {'*******'}  USD </h3>
+        <div className={style.wallet}>
+          {visible == true ? store.items.map(i =>
+            <h3><span>{i.id} : {((i.priceUsd) * i.count).toFixed(2)}</span> USD </h3>
           )
-        }
+            :
+            store.items.map(item =>
+              <h3>{item.id} {'*******'}  USD </h3>
+            )
+          }
+        </div>
         <h2>Supply: </h2>
+
         {visible == true ?
 
           <h3>{(store.totalPrice).toFixed(2)} USD</h3>
           :
           <h3>*********** USD</h3>
         }
+
       </div>
       <div className={style.logout}>
         <LogoutBtn handleLogout={handleLogout} />
